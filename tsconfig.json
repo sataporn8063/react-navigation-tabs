@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig",
+  "references": [
+    { "path": "../react-navigation" }
+  ],
+  "compilerOptions": {
+    "outDir": "./lib/typescript"
+  }
+}
