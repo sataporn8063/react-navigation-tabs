@@ -392,7 +392,7 @@ class TabBarBottom extends React.Component<BottomTabBarProps, State> {
       safeAreaInset,
       style,
       tabStyle,
-      hiddenRouteName
+      hiddenRouteName,
     } = this.props;
 
     const { routes } = navigation.state;
@@ -470,58 +470,60 @@ class TabBarBottom extends React.Component<BottomTabBarProps, State> {
         onLayout={this._handleLayout}
       >
         <SafeAreaView style={tabBarStyle} forceInset={safeAreaInset}>
-          {routes.filter(route=>{
-            return route.routeName !== hiddenRouteName;
-          }).map((route, index) => {
-            const focused = index === navigation.state.index;
-            const scene = { route, focused };
-            const accessibilityLabel = this.props.getAccessibilityLabel({
-              route,
-            });
+          {routes
+            .filter((route) => {
+              return route.routeName !== hiddenRouteName;
+            })
+            .map((route, index) => {
+              const focused = index === navigation.state.index;
+              const scene = { route, focused };
+              const accessibilityLabel = this.props.getAccessibilityLabel({
+                route,
+              });
 
-            const accessibilityRole = this.props.getAccessibilityRole({
-              route,
-            });
+              const accessibilityRole = this.props.getAccessibilityRole({
+                route,
+              });
 
-            const accessibilityStates = this.props.getAccessibilityStates(
-              scene
-            );
+              const accessibilityStates = this.props.getAccessibilityStates(
+                scene
+              );
 
-            const testID = this.props.getTestID({ route });
+              const testID = this.props.getTestID({ route });
 
-            const backgroundColor = focused
-              ? activeBackgroundColor
-              : inactiveBackgroundColor;
+              const backgroundColor = focused
+                ? activeBackgroundColor
+                : inactiveBackgroundColor;
 
-            const ButtonComponent =
-              this.props.getButtonComponent({ route }) ||
-              TouchableWithoutFeedbackWrapper;
+              const ButtonComponent =
+                this.props.getButtonComponent({ route }) ||
+                TouchableWithoutFeedbackWrapper;
 
-            return (
-              <ButtonComponent
-                key={route.key}
-                route={route}
-                focused={focused}
-                onPress={() => onTabPress({ route })}
-                onLongPress={() => onTabLongPress({ route })}
-                testID={testID}
-                accessibilityLabel={accessibilityLabel}
-                accessibilityRole={accessibilityRole}
-                accessibilityStates={accessibilityStates}
-                style={[
-                  styles.tab,
-                  { backgroundColor },
-                  this._shouldUseHorizontalLabels()
-                    ? styles.tabLandscape
-                    : styles.tabPortrait,
-                  tabStyle,
-                ]}
-              >
-                {this._renderIcon(scene)}
-                {this._renderLabel(scene)}
-              </ButtonComponent>
-            );
-          })}
+              return (
+                <ButtonComponent
+                  key={route.key}
+                  route={route}
+                  focused={focused}
+                  onPress={() => onTabPress({ route })}
+                  onLongPress={() => onTabLongPress({ route })}
+                  testID={testID}
+                  accessibilityLabel={accessibilityLabel}
+                  accessibilityRole={accessibilityRole}
+                  accessibilityStates={accessibilityStates}
+                  style={[
+                    styles.tab,
+                    { backgroundColor },
+                    this._shouldUseHorizontalLabels()
+                      ? styles.tabLandscape
+                      : styles.tabPortrait,
+                    tabStyle,
+                  ]}
+                >
+                  {this._renderIcon(scene)}
+                  {this._renderLabel(scene)}
+                </ButtonComponent>
+              );
+            })}
         </SafeAreaView>
       </Animated.View>
     );
