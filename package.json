@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-tabs",
-  "version": "2.8.10",
+  "version": "2.8.11",
   "description": "Tab Navigation components for React Navigation",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -41,6 +41,7 @@
   "homepage": "https://github.com/olioss/react-navigation-tabs#readme",
   "dependencies": {
     "hoist-non-react-statics": "^3.3.2",
+    "lodash": "^4.17.15",
     "react-lifecycles-compat": "^3.0.4",
     "react-native-safe-area-view": "^0.14.8",
     "react-native-screens": "^2.4.0",
