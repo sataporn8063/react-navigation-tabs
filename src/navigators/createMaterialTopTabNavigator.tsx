@@ -26,7 +26,7 @@ type Config = {
     tabBarPosition?: 'top' | 'bottom';
     sceneContainerStyle?: StyleProp<ViewStyle>;
     style?: StyleProp<ViewStyle>;
-    hiddenRouteName?: unknown;
+    hiddenRouteName?: string;
 };
 
 type Props = NavigationViewProps &
@@ -66,7 +66,11 @@ class MaterialTabView extends React.PureComponent<Props> {
 
         let cloneNavigation = cloneDeep(navigation);
         cloneNavigation.state.routes = cloneNavigation.state.routes.filter(route => {
-            return route.routeName !== hiddenRouteName
+            if(hiddenRouteName){
+                return hiddenRouteName.split('|').indexOf(route.routeName) === -1;
+            }else{
+                return true;
+            }
         })
 
         if (TabBarComponent === null || !tabBarVisible || cloneNavigation.state.routes.length <= 1) {
@@ -112,7 +116,11 @@ class MaterialTabView extends React.PureComponent<Props> {
         } = this.props;
         let cloneNavigation = cloneDeep(navigation);
         cloneNavigation.state.routes = cloneNavigation.state.routes.filter(route => {
-            return route.routeName !== hiddenRouteName
+            if(hiddenRouteName){
+                return hiddenRouteName.split('|').indexOf(route.routeName) === -1;
+            }else{
+                return true;
+            }
         })
         // console.log('navigation', navigation);
 

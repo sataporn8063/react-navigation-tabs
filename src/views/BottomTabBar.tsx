@@ -472,7 +472,11 @@ class TabBarBottom extends React.Component<BottomTabBarProps, State> {
         <SafeAreaView style={tabBarStyle} forceInset={safeAreaInset}>
           {routes
             .filter((route) => {
-              return route.routeName !== hiddenRouteName;
+              if(hiddenRouteName){
+                return hiddenRouteName.split('|').indexOf(route.routeName) === -1;
+              }else{
+                return true;
+              }
             })
             .map((route, index) => {
               const focused = index === navigation.state.index;
