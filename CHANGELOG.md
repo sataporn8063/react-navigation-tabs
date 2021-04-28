@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.11.0...react-navigation-tabs@2.11.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* check for screens enabled in ScreenContainer ([6e832cb](https://github.com/react-navigation/tabs/commit/6e832cb4ac5e6568e3bc9c846e1fbd739a3c3d84))
+
+
+
+
+
+# [2.11.0](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.10.1...react-navigation-tabs@2.11.0) (2021-02-21)
+
+
+### Features
+
+* add activityState to other navigators ([5c7f892](https://github.com/react-navigation/tabs/commit/5c7f892d77298f5c89534fa78a1a6a59c7f35a60))
+
+
+
+
+
+## [2.10.1](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.10.0...react-navigation-tabs@2.10.1) (2020-10-28)
+
+
+### Bug Fixes
+
+* add bottom insets to custom height for bottom tabs ([ffe3bdd](https://github.com/react-navigation/tabs/commit/ffe3bddcb27ecb3d663b13b433263d18f792ad4d))
+
+
+
+
+
+# [2.10.0](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.9.2...react-navigation-tabs@2.10.0) (2020-10-26)
+
+
+### Bug Fixes
+
+* use react-native-iphone-x-helper in bottom-tabs navigator ([ebe70f5](https://github.com/react-navigation/tabs/commit/ebe70f51fbb8d892be9c44b0c226947684c24338))
+
+
+### Features
+
+* add detachInactiveScreens prop for bottom tabs and drawer ([#8816](https://github.com/react-navigation/tabs/issues/8816)) ([707bea3](https://github.com/react-navigation/tabs/commit/707bea3cba1aa1f7b1eb5884dd1d129dcc2bbdc2))
+
+
+
+
+
+## [2.9.2](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.9.1...react-navigation-tabs@2.9.2) (2020-10-02)
+
+**Note:** Version bump only for package react-navigation-tabs
+
+
+
+
+
+## [2.9.1](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.9.0...react-navigation-tabs@2.9.1) (2020-09-24)
+
+**Note:** Version bump only for package react-navigation-tabs
+
+
+
+
+
+# [2.9.0](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.8.13...react-navigation-tabs@2.9.0) (2020-06-25)
+
+
+### Features
+
+* sync latest stack and upgrade typescript ([454e05b](https://github.com/react-navigation/tabs/commit/454e05b02ec97f053b381fdc801df899d8c93cb6))
+
+
+
+
+
+## [2.8.13](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.8.12...react-navigation-tabs@2.8.13) (2020-04-30)
+
+**Note:** Version bump only for package react-navigation-tabs
+
+
+
+
+
+## [2.8.12](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.8.11...react-navigation-tabs@2.8.12) (2020-04-22)
+
+**Note:** Version bump only for package react-navigation-tabs
+
+
+
+
+
+## [2.8.11](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.8.10...react-navigation-tabs@2.8.11) (2020-04-02)
+
+**Note:** Version bump only for package react-navigation-tabs
+
+
+
+
+
 ## [2.8.10](https://github.com/react-navigation/tabs/compare/react-navigation-tabs@2.8.9...react-navigation-tabs@2.8.10) (2020-03-31)
 
 **Note:** Version bump only for package react-navigation-tabs

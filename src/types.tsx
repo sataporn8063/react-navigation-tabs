@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {
   AccessibilityRole,
-  AccessibilityStates,
+  AccessibilityState,
   StyleProp,
   TextStyle,
   ViewStyle,
 } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
 import Animated from 'react-native-reanimated';
 import {
   NavigationRoute,
@@ -94,7 +93,12 @@ export type BottomTabBarOptions = {
     | LabelPosition
     | ((options: { deviceOrientation: Orientation }) => LabelPosition);
   adaptive?: boolean;
-  safeAreaInset?: React.ComponentProps<typeof SafeAreaView>['forceInset'];
+  safeAreaInset?: {
+    top?: 'always' | 'never' | number;
+    right?: 'always' | 'never' | number;
+    bottom?: 'always' | 'never' | number;
+    left?: 'always' | 'never' | number;
+  };
   style?: StyleProp<ViewStyle>;
 };
 
@@ -106,7 +110,8 @@ export type ButtonComponentProps = {
   testID?: string;
   accessibilityLabel?: string;
   accessibilityRole?: AccessibilityRole;
-  accessibilityStates?: AccessibilityStates[];
+  accessibilityState?: AccessibilityState;
+  accessibilityStates?: string[];
   style?: StyleProp<ViewStyle>;
 };
 
@@ -123,7 +128,7 @@ export type BottomTabBarProps = BottomTabBarOptions & {
   getAccessibilityStates: (props: {
     route: NavigationRoute;
     focused: boolean;
-  }) => AccessibilityStates[];
+  }) => string[];
   getButtonComponent: (props: {
     route: NavigationRoute;
   }) => React.ComponentType<ButtonComponentProps> | undefined;
@@ -149,6 +154,7 @@ export type BottomTabBarProps = BottomTabBarOptions & {
   jumpTo: (key: string) => void;
   screenProps: unknown;
   hiddenRouteName?: string;
+  detachInactiveScreens?: boolean;
 };
 
 export type MaterialTabBarOptions = {
