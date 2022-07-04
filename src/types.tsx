@@ -113,6 +113,7 @@ export type ButtonComponentProps = {
   accessibilityState?: AccessibilityState;
   accessibilityStates?: string[];
   style?: StyleProp<ViewStyle>;
+  children?: React.ReactNode;
 };
 
 export type BottomTabBarProps = BottomTabBarOptions & {
